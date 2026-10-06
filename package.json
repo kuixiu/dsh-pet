@@ -1,0 +1,63 @@
+{
+  "name": "@kuixiu/dsh-pet",
+  "version": "1.0.0",
+  "description": "Bottom-right electronic pet for DeepSeek Harness with a DeepSeek peak / off-peak pricing indicator, per-turn cost, and occasional one-liners",
+  "icon": "./icon.svg",
+  "meta": {
+    "title": "DeepSeek Pet",
+    "description": "A Q-style kitten in the bottom-right corner that shows whether DeepSeek is in peak or off-peak pricing, what each turn cost, and now and then says something encouraging."
+  },
+  "type": "module",
+  "license": "MIT",
+  "author": "kuixiu (https://github.com/kuixiu)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuixiu/dsh-pet.git"
+  },
+  "homepage": "https://github.com/kuixiu/dsh-pet#readme",
+  "bugs": {
+    "url": "https://github.com/kuixiu/dsh-pet/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "desktop-pet",
+    "peak-off-peak",
+    "cost"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "verify": "node verify-all.mjs",
+    "prepublishOnly": "node verify-all.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+# Dependencies (this package itself ships none, but a checkout may gain some)
+node_modules/
+.pnpm-store/
+
+# npm publish artifacts
+*.tgz
+.npm/
+npm-debug.log*
+yarn-error.log*
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Scratch
+*.local
+tmp/
+.tmp/

@@ -1,0 +1,9 @@
+# Bundle patch for @kuixiu/dsh-pet: one loader row inserts the plugin.
+# The Host half is inert; the Client half registers into shell.overlay
+# and renders the pet in the bottom-right corner of the Harness Web UI.
+#
+# NOTE: the row `name` must stay identical to the package name, because the
+# client module id has to match it for the browser bundle to be found.
+- insert:
+    - id: pet
+      name: '@kuixiu/dsh-pet'

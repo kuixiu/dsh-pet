@@ -1,0 +1,13 @@
+# Normalise line endings to LF in the repository, so the published tarball and
+# every clone agree regardless of the contributor's OS.
+* text=auto eol=lf
+
+# Keep binary assets binary.
+*.svg text
+*.png binary
+*.jpg binary
+*.webp binary
+
+# GitHub language stats: the plugin is plain JavaScript.
+*.js linguist-language=JavaScript
+*.mjs linguist-language=JavaScript
